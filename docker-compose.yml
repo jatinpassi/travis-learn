@@ -1,0 +1,21 @@
+# @format
+
+version: "3"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - "/var/www/dashboard/node_modules"
+      - .:/var/www/dashboard
+    ports:
+      - "4200:4200"
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - "/var/www/dashboard/node_modules"
+      - .:/var/www/dashboard
+    command: ["npm", "test"]

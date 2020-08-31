@@ -1,0 +1,5 @@
+dashboard/node_modules
+dashboard/.dockerignore
+dashboard/.gitignore
+dashboard/.git
+dashboard/Dockerfile.dev
