@@ -5,18 +5,18 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     volumes:
       - "/var/www/dashboard/node_modules"
       - /dashboard:/var/www/dashboard/
     ports:
-      - "4200:4200"
-    command: ["npm", "start"]
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - "/var/www/dashboard/node_modules"
-      - /dashboard:/var/www/dashboard/
-    command: ["npm", "test"]
+      - "4200:80"
+    # command: ["npm", "start"]
+  # tests:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.dev
+  #   volumes:
+  #     - "/var/www/dashboard/node_modules"
+  #     - /dashboard:/var/www/dashboard/
+  #   command: ["npm", "test"]
