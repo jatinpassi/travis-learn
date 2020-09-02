@@ -8,14 +8,15 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - "/var/www/dashboard/node_modules"
-      - .:/var/www/dashboard
+      - /dashboard:/var/www/dashboard/
     ports:
       - "4200:4200"
+    command: ["npm", "start"]
   tests:
     build:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
       - "/var/www/dashboard/node_modules"
-      - .:/var/www/dashboard
+      - /dashboard:/var/www/dashboard/
     command: ["npm", "test"]

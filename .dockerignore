@@ -1,5 +1,5 @@
-dashboard/node_modules
-dashboard/.dockerignore
-dashboard/.gitignore
-dashboard/.git
-dashboard/Dockerfile.dev
+node_modules
+.dockerignore
+.gitignore
+.git
+Dockerfile.dev
