@@ -3,7 +3,11 @@ services:
   - docker
 before_install:
   - docker build -t jatin/dashboard -f Dockerfile .
-after_success:
-  - docker login --username $HEROKU_DOCKER_USERNAME --password $HEROKU_AUTH_PASSWORD registry.heroku.com
-  - docker tag dashboard-app:latest registry.heroku.com/frontend-1-staging/web
-  - docker push registry.heroku.com/frontend-1-staging/web;
+deploy:
+  provider: heroku
+  api_key:
+    secure: "$HEROKU_AUTH_PASSWORD"
+    4906b0fd-b0aa-4f86-ac9e-addf5ccd8d87
+  app: frontend-1-staging
+  on:
+    branch: master
