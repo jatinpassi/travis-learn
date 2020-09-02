@@ -9,6 +9,7 @@ RUN npm run build
 
 
 FROM nginx
+EXPOSE 80
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 RUN rm -rf /usr/share/nginx/html/*
