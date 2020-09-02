@@ -5,9 +5,8 @@ before_install:
   - docker build -t jatin/dashboard -f Dockerfile .
 deploy:
   provider: heroku
-  api_key:
-    secure: "$HEROKU_AUTH_PASSWORD"
-    4906b0fd-b0aa-4f86-ac9e-addf5ccd8d87
-  app: frontend-1-staging
   on:
     branch: master
+  api_key:
+    secure: "$HEROKU_AUTH_PASSWORD"
+  app: frontend-1-staging
