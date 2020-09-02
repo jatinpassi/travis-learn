@@ -4,7 +4,7 @@ services:
 before_install:
   - docker build -t jatin/dashboard -f Dockerfile .
 deploy:
-  provider: heroku
+  provider: heroku:container
   api_key: 4906b0fd-b0aa-4f86-ac9e-addf5ccd8d87
   app: frontend-1-staging
   on:
